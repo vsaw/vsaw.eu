@@ -191,6 +191,7 @@ ul.dropdown-menu>li>a>i.fa {
 
 #navigation-sidebar {
 	text-align: right;
+	list-style-type: none;
 }
 
 #navigation-sidebar>ul>li>a>i.fa {
@@ -203,5 +204,5 @@ ul.dropdown-menu>li>a>i.fa {
 	color: white;
 	color: #fff;
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 2em;
+	font-size: 1.5em;
 }
