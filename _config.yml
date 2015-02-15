@@ -10,6 +10,11 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: _vsaw
 github_username:  vsaw
 exclude: ["Vagrantfile", "Vagrant", "Gemfile", "Gemfile.lock"]
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
 
 # Build settings
 markdown: redcarpet
