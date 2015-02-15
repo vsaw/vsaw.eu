@@ -1,4 +1,4 @@
-<! -- sidebar.html -->
+<!-- sidebar.html -->
 <header class="sidebar-header" role="banner">
 	<a href="{{ site.BASE_PATH }}/">
 		<img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle" />
@@ -14,9 +14,11 @@
 	</div>
 {% endif %}
 
-<ul>
-	{% include navigation.html %}
-</ul>
+<div id="navigation-sidebar">
+	<ul>
+		{% include navigation.html %}
+	</ul>
+</div>
 
 <div id="contact-list" class="text-center">
 	<ul class="list-unstyled list-inline">
@@ -64,4 +66,4 @@
 		{% endif %}
 	</ul>
 </div>
-<! -- sidebar.html end -->
+<!-- sidebar.html end -->
