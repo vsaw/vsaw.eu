@@ -16,6 +16,7 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 about_path: about.html
+projects_path: projects.html
 paginate: 10
 paginate_path: "page:num"
 

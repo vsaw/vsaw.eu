@@ -1,9 +1,0 @@
----
-layout: page
-tagline:
-title: Projects
----
-
-{% for repository in site.github.public_repositories %}
-    {{ repository.name }}  {{ repository.homepage }} {{ repository.has_pages }} {{ repository.fork }} <br />
-{% endfor %}
