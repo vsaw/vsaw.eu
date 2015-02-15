@@ -8,17 +8,17 @@
 	</h3>
 </header>
 
-{% if site.author.bio %}
-	<div id="bio">
-		{{ site.author.bio }}
-	</div>
-{% endif %}
-
 <div id="navigation-sidebar">
 	<ul>
 		{% include navigation.html %}
 	</ul>
 </div>
+
+{% if site.author.bio %}
+	<div id="bio">
+		{{ site.author.bio }}
+	</div>
+{% endif %}
 
 <div id="contact-list">
 	<ul class="list-unstyled list-inline">
