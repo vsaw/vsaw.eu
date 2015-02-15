@@ -169,7 +169,7 @@ footer {
 .badge { background: #F2756A; }
 
 #nav-menu{
-	display: none;
+	display: none !important;
     position: fixed;
     top: 45px;
     right: 45px;
