@@ -41,6 +41,11 @@ a.nav-link:hover { color: #777 }
 	font-size: 11px;
 	margin: 0 auto;
 	margin-bottom: 10px;
+	text-align: right;
+}
+
+#contact-list {
+	text-align: right;
 }
 
 #contact-list li .fa,
@@ -186,4 +191,5 @@ ul.dropdown-menu>li>a>i.fa {
 
 #navigation-sidebar {
 	text-align: right;
+	color: white;
 }
