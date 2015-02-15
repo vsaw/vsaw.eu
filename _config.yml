@@ -1,18 +1,21 @@
 # Site settings
 title: Valentins Blog
 email: valentin@sawadski.eu
-description: > # this means to ignore newlines until "baseurl:"
-  This is about hacking, technological advances and how to seize the
-  opportunity! All from an entrepreneurial angle and based on personal
-  experiences.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: _vsaw
-github_username:  vsaw
+author:
+    twitter: _vsaw
+    github: vsaw
+    bio: >
+      This is about hacking, technological advances and how to seize the
+      opportunity! All from an entrepreneurial angle and based on personal
+      experiences.
+    email_md5: 852b85aa04b05cb283891c04b7821a44
 exclude: ["Vagrantfile", "Vagrant", "Gemfile", "Gemfile.lock"]
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
+
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 
