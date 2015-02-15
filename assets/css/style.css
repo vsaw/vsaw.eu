@@ -198,9 +198,10 @@ ul.dropdown-menu>li>a>i.fa {
 	color: #fff;
 }
 
-#navigation-sidebar a {
+#navigation-sidebar>ul>li>a {
 	text-transform: uppercase;
 	color: white;
 	color: #fff;
 	font-family: 'Ubuntu', sans-serif;
+	font-size: 2em;
 }
