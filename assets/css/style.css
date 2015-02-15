@@ -195,9 +195,12 @@ ul.dropdown-menu>li>a>i.fa {
 
 #navigation-sidebar>ul>li>a>i.fa {
 	width: 1.3em;
-	color: white;
+	color: #fff;
 }
 
 #navigation-sidebar a {
+	text-transform: uppercase;
 	color: white;
+	color: #fff;
+	font-family: 'Ubuntu', sans-serif;
 }
