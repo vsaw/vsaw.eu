@@ -194,6 +194,10 @@ ul.dropdown-menu>li>a>i.fa {
 	list-style-type: none;
 }
 
+#navigation-sidebar ul {
+	list-style-type: none;
+}
+
 #navigation-sidebar>ul>li>a>i.fa {
 	width: 1.3em;
 	color: #fff;
