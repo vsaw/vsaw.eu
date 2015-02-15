@@ -7,8 +7,8 @@ title: Projects
 
 # Personal Projects
 {% for repository in site.github.public_repositories %}
-    {{ if repository.fork == false }}
-        {{ if repository.has_pages }}
+    {% if repository.fork == false and repository.has_pages == true %}
+        {% if repository.name != site.github.repository_name %}
 - [{{ repository.name }}]({{ repository.homepage }}): {{ repository.description }}
         {% endif %}
     {% endif %}
@@ -16,7 +16,7 @@ title: Projects
 
 # Contributions and Forks
 {% for repository in site.github.public_repositories %}
-    {{ if repository.fork }}
-- [{{ repository.name }}]({{ repository.homepage }}): {{ repository.description }}
+    {% if repository.fork == true %}
+- [{{ repository.name }}]({{ repository.homepage }}): {{ repository.description }} {{ repository.parent.full_name }}
     {% endif %}
 {% endfor %}
