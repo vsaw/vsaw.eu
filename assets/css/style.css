@@ -191,5 +191,13 @@ ul.dropdown-menu>li>a>i.fa {
 
 #navigation-sidebar {
 	text-align: right;
+}
+
+#navigation-sidebar>ul>li>a>i.fa {
+	width: 1.3em;
+	color: white;
+}
+
+#navigation-sidebar a {
 	color: white;
 }
