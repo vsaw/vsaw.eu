@@ -1,7 +1,6 @@
 ---
 title: About
 layout: page
-permalink: about.html
 ---
 
 # Blog License

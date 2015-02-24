@@ -12,11 +12,25 @@ author:
     email_md5: 852b85aa04b05cb283891c04b7821a44
 
 # Layout dbyll
-rss_path: feed.xml
-categories_path: categories.html
-tags_path: tags.html
-about_path: about.html
-projects_path: projects.html
+defaults:
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+    -
+        scope:
+            path: "projects"
+            type: "pages"
+        values:
+            layout: "project"
+permalink: /blog/:year/:month/:title/
+rss_path: blog/feed.xml
+categories_path: blog/categories.html
+tags_path: blog/tags.html
+about_path: about/
+projects_path: projects/
 paginate: 10
 paginate_path: "page:num"
 

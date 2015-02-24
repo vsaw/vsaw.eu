@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "3 things most freelancers do wrong when approaching clients"
-date:   2013-10-06
+title: "3 things most freelancers do wrong when approaching clients"
+date: 2013-10-06
 tags:
 ---
 

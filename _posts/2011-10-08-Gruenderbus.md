@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "Gründerbus... oh how much I'd like to be part of that "
-date:   2011-10-08
-tags:   Entrepreneur
+title: "Gründerbus... oh how much I'd like to be part of that "
+date: 2011-10-08
+tags: Entrepreneur
 ---
 
 These days something very cool is going on in Germany. The [Gründerbus](http://www.gruenderbus.de/Gruenderbus/GruenderBus.html) will be on tour!

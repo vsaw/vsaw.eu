@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Brainstorming a talk about Entrepreneurship"
-date:   2011-12-04
+title: "Brainstorming a talk about Entrepreneurship"
+date: 2011-12-04
 tags: Entrepreneur
 ---
 

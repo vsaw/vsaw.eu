@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "Why your tech-startup should do test driven development"
-date:   2013-09-29
-tags:   Tech
+title: "Why your tech-startup should do test driven development"
+date: 2013-09-29
+tags: Tech
 ---
 
 When it comes to starting a company a lot of attention goes to "what value does it generate?" and "what is the business model?" but for those who work in tech it is equally important to focus on "how are we going to build our product?" as this is one of the key problems that the CTO has to tackle. The answer to this could be "Test Driven Development"

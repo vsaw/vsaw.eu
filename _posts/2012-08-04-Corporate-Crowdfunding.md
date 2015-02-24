@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Corporate Crowdfunding"
-date:   2012-08-04
+title: "Corporate Crowdfunding"
+date: 2012-08-04
 tags: Entrepreneur Idea
 ---
 

@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "7 Essential requirements for the future protocol of the IoT"
-date:   2014-03-01
+title: "7 Essential requirements for the future protocol of the IoT"
+date: 2014-03-01
 tags: Tech IoT
 ---
 

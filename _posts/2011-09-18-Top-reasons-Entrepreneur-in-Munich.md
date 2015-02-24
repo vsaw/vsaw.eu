@@ -1,9 +1,8 @@
 ---
-layout: post
-title:  "Top 3 Reasons why it is great to be an entrepreneur in Munich right now"
-date:   2011-09-18
+title: "Top 3 Reasons why it is great to be an entrepreneur in Munich right now"
+date: 2011-09-18
 categories:
-tags:   Entrepreneur Munich
+tags: Entrepreneur Munich
 ---
 
 Right now I think it you're in a very good spot if you are a entrepreneur in Munich. Mainly for those three reasons:

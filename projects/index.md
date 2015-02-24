@@ -1,7 +1,6 @@
 ---
 layout: page
 tagline:
-permalink: projects.html
 title: Projects
 ---
 

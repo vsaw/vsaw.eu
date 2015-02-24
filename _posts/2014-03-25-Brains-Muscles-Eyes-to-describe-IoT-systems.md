@@ -1,7 +1,6 @@
 ---
-layout: post
-title:  "Brains, muscles, eyes & ears - A simple way to describe and design a real word sensor/actuator system"
-date:   2014-03-25
+title: "Brains, muscles, eyes & ears - A simple way to describe and design a real word sensor/actuator system"
+date: 2014-03-25
 tags: Tech IoT
 ---
 

@@ -1,9 +1,8 @@
 ---
-layout: post
-title:  "A personal recap of Mini-Seedcamp London"
-date:   2011-08-18
+title: "A personal recap of Mini-Seedcamp London"
+date: 2011-08-18
 categories:
-tags:   Entrepreneur
+tags: Entrepreneur
 ---
 
 So it's been over a week since [Mini-Seedcamp London](http://www.seedcamp.com/events/mini-seedcamp-london-11-august). I went there as part of Team [EnergyBob](http://energybob.com/) and now it's time for some recap.

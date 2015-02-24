@@ -1,9 +1,8 @@
 ---
-layout: post
-title:  "A rough introduction to mathematical games"
-date:   2011-09-10
+title: "A rough introduction to mathematical games"
+date: 2011-09-10
 categories:
-tags:   Math
+tags: Math
 ---
 
 In this Post I'll give a very rough explanation on games from a mathematical point of view. But first let's dig deep to find the essence of a game.
