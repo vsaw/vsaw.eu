@@ -2,10 +2,4 @@
 layout: default
 ---
 
-{% for repository in site.github.public_repositories %}
-    {% if repository.name == page.title %}
-        {% assign site.github = repository %}
-    {% endif %}
-{% endfor %}
-
 {% include project.html %}

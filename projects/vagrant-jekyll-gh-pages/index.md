@@ -2,19 +2,26 @@
 title: vagrant-jekyll-gh-pages
 ---
 
+{% for r in site.github.public_repositories %}
+    {% if r.name == page.title %}
+        {% assign repository = r %}
+    {% endif %}
+{% endfor %}
+
+
 This will bootstrap a small ubuntu server running [Jekyll](http://jekyllrb.com/) configured by the [guidelines of GitHub Pages](https://help.github.com/articles/using-jekyll-with-pages/).
 
 The **Requirements** are only [Vagrant](https://www.vagrantup.com/). The rest will be automatically retrieved and installed by the script.
 
 # Getting Started
-1. Clone the repository with `git clone {{ site.github.clone_url }}`
-2. Go inside the cloned project `cd {{ site.github.project_title }}`
+1. Clone the repository with `git clone {{ repository.clone_url }}`
+2. Go inside the cloned project `cd {{ repository.name }}`
 3. Start Vagrant `vagrant up`
 
 That's it you're done and can immediately visit your page at [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 # Advanced Administration
-Jekyll ist installed as a normal ubuntu service. You can control it directly using
+Jekyll is installed as a normal ubuntu service. You can control it directly using
 
 ```bash
 # SSH into the vagrant container
@@ -25,4 +32,4 @@ $ sudo service jekyll (start|stop|restart|status)
 ```
 
 # License
-See [LICENSE]({{ site.github.repository_url }}/blob/gh-pages/LICENSE)
+See [LICENSE]({{ repository.html_url }}/blob/{{ repository.default_branch }}/LICENSE)
