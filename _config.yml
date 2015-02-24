@@ -32,7 +32,7 @@ tags_path: blog/tags.html
 about_path: about/
 projects_path: projects/
 paginate: 10
-paginate_path: "page:num"
+paginate_path: "blog/page:num"
 
 # Build settings
 markdown: redcarpet
