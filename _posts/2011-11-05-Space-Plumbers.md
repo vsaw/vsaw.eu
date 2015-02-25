@@ -1,6 +1,5 @@
 ---
 title: "How will your future space-plumber be like?"
-date: 2011-11-05
 tags: Idea Tech
 ---
 

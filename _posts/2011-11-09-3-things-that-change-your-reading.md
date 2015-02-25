@@ -1,6 +1,5 @@
 ---
 title: "3 things that will change your reading"
-date: 2011-11-09
 tags:
 ---
 

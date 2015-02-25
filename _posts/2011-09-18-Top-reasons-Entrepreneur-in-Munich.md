@@ -1,7 +1,5 @@
 ---
 title: "Top 3 Reasons why it is great to be an entrepreneur in Munich right now"
-date: 2011-09-18
-categories:
 tags: Entrepreneur Munich
 ---
 

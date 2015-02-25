@@ -1,6 +1,5 @@
 ---
-title: "Gründerbus... oh how much I'd like to be part of that "
-date: 2011-10-08
+title: "Gründerbus... oh how much I'd like to be part of that"
 tags: Entrepreneur
 ---
 

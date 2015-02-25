@@ -1,6 +1,5 @@
 ---
 title: "6 simple ways to add WiFi to your Internet of Things device"
-date: 2013-12-27
 tags: Tech IoT
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Linux /dev/ttyUSB for FTDI devices of custom PID and VID"
-date: 2013-06-28
 tags: Tech
 ---
 

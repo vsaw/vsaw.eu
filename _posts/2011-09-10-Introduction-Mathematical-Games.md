@@ -1,7 +1,5 @@
 ---
 title: "A rough introduction to mathematical games"
-date: 2011-09-10
-categories:
 tags: Math
 ---
 

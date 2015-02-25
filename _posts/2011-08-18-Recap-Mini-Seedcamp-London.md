@@ -1,7 +1,5 @@
 ---
 title: "A personal recap of Mini-Seedcamp London"
-date: 2011-08-18
-categories:
 tags: Entrepreneur
 ---
 

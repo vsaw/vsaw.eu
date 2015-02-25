@@ -1,6 +1,5 @@
 ---
 title: "Why your tech-startup should do test driven development"
-date: 2013-09-29
 tags: Tech
 ---
 

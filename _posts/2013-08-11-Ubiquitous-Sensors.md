@@ -1,6 +1,5 @@
 ---
-title: "The future of ubiquitous sensors and new ways to write software for it "
-date: 2013-08-11
+title: "The future of ubiquitous sensors and new ways to write software for it"
 tags: Tech IoT
 ---
 

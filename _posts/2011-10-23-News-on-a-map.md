@@ -1,6 +1,5 @@
 ---
 title: "Don't read news, watch them on a map!"
-date: 2011-10-23
 tags: Idea
 ---
 
