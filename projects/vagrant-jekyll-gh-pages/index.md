@@ -1,5 +1,6 @@
 ---
 title: vagrant-jekyll-gh-pages
+description: Set up Jekyll to locally test GitHub Pages within minutes
 ---
 
 {% for r in site.github.public_repositories %}

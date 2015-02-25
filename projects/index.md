@@ -10,7 +10,7 @@ title: Projects
     {% if p.path != page.path %}
         {% assign top_dir = p.path | split:"/" | first %}
         {% if top_dir == project_dir %}
-- [{{ p.title }}]({{ p.url }})
+- [{{ p.title }}]({{ p.url }}): {{ p.description }}
         {% endif %}
     {% endif %}
 {% endfor %}
