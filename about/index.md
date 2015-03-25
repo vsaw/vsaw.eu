@@ -6,7 +6,7 @@ layout: page
 # Blog License
 This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-## Design License
+# Design License
 Theme: [dbyll](https://github.com/dbtek/dbyll) by dbtek is released under the following Terms
 
 > The MIT License (MIT)
