@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <title>SmartScheduler</title>
+        <script>
+            var showStep = function(stepName) {
+                $(".step").hide();
+                var step = $("." + stepName);
+                step.attr("class", function(i, origValue){
+                    return origValue.replace("hidden", "");
+                });
+                step.show();
+            }
+
+            var initDatePicker = function() {
+                var nowTemp = new Date();
+                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+                var checkin = $('#dpStart').datepicker({
+                    onRender: function(date) {
+                        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                    }
+                    }).on('changeDate', function(ev) {
+                        if (ev.date.valueOf() > checkout.date.valueOf()) {
+                            var newDate = new Date(ev.date)
+                            newDate.setDate(newDate.getDate());
+                            checkout.setValue(newDate);
+                        } else {
+                            // Re-set the current date of the checkout calendar
+                            // to re-render it.
+                            checkout.setValue(checkout.date);
+                        }
+                        checkin.hide();
+                        $('#dpEnd')[0].focus();
+                    }).data('datepicker');
+                var checkout = $('#dpEnd').datepicker({
+                    onRender: function(date) {
+                        return date.valueOf() < checkin.date.valueOf() ? 'disabled' : '';
+                    }
+                    }).on('changeDate', function(ev) {
+                        checkout.hide();
+                    }).data('datepicker');
+            }
+
+            $(document).ready(function() {
+                initDatePicker();
+            });
+        </script>
+        <style>
+            hr.debug {
+                background-color: blue;
+                height: 0.5em;
+                display: none;
+            }
+
+            i.fa {
+                padding-right: 0.1em;
+            }
+
+            .btn-danger, .btn-success {
+                width: 40%;
+            }
+
+            .step {
+                min-height: 480px;
+                padding-bottom: 15px;
+            }
+
+            .form-control[readonly] {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="hidden-xs col-sm-2 col-md-4">
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4">
+                    <div class="step step-welcome-demo">
+                        <h1>SmartScheduler</h1>
+
+                        <p class="lead">
+                            <strong>This is a demo.</strong> All Logins are fake. No changes to your calendar are made.
+                        </p>
+
+                        <p>
+                            <div class="list-group">
+                                <a onclick="showStep('step-login-creator')" class="list-group-item" role="button">
+                                    <h4 class="list-group-item-heading">Part 1: Create an Event</h4>
+                                    <p class="list-group-item-text">
+                                        Jump in the role of creating an Event for the first
+                                        time using SmartScheduler
+                                    </p>
+                                </a>
+                                <a onclick="showStep('step-login-visitor')" class="list-group-item" role="button">
+                                    <h4 class="list-group-item-heading">Part 2: Join an Event</h4>
+                                    <p class="list-group-item-text">
+                                        What happens when you received a link to join an
+                                        Event
+                                    </p>
+                                </a>
+                                <a onclick="showStep('step-update-notification')" class="list-group-item" role="button">
+                                    <h4 class="list-group-item-heading">Part 3: Receive Updates</h4>
+                                    <p class="list-group-item-text">
+                                        When a friend clicks your link at a later point in time SmartScheduler will
+                                        send you an email with the updated time slots
+                                    </p>
+                                </a>
+                                <!--<a onclick="showStep('step-login-confirm-creator')" class="list-group-item" role="button">
+                                    <h4 class="list-group-item-heading">Part 4: Confirm a Date</h4>
+                                    <p class="list-group-item-text">
+                                        How to confirm a date with everyone once all have
+                                        joined the Event
+                                    </p>
+                                </a> -->
+                            </div>
+                        </p>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-login-creator">
+                        <h1>SmartScheduler</h1>
+                        <p class="lead">
+                            Quit the endless scheduling <em>ping-pong</em>
+                        </p>
+                            <blockquote>
+                                <p>We should get together!</p>
+                                <p style="text-align: right;">Yeah! How about tomorrow?</p>
+                                <p>I can't. Can you make Friday?</p>
+                                <p style="text-align: right;">No. But I could make next Tuesday</p>
+                                <p>…</p>
+                            </blockquote>
+                        <p class="lead">
+                            And find available dates with a click!
+                        </p>
+
+                        <a class="btn btn-default center-block" onclick="showStep('step-calendar-access-creator')" role="button">
+                            <i class="fa fa-google-plus"></i> Login with Google
+                        </a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-calendar-access-creator">
+                        <h1>Calendar Access</h1>
+                        <p class="lead">
+                            SmartScheduler needs access to your calendar
+                        </p>
+
+                        <p>
+                            <ul>
+                                <li>See and modify your Calendar</li>
+                                <li>See your Google-Username</li>
+                                <li>See your Google-Email-Address</li>
+                            </ul>
+                        </p>
+
+                        <center>
+                            <a class="btn btn-danger" onclick="showStep('step-login-creator')" role="button">Abort</a>
+                            <a class="btn btn-success" onclick="showStep('step-calendar-setup-creator')" role="button">Give Access</a>
+                        </center>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-calendar-setup-creator">
+                        <h1>Calendar Setup</h1>
+                        <p class="lead">
+                            Select the calendars to include and give us an Email where to
+                            reach you. You only have to do this once
+                        </p>
+
+                        <form>
+                            <input type="email" class="form-control" id="exampleInputEmail1" value="event-creator@gmail.com">
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Home
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Work
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Holidays
+                                </label>
+                            </div>
+                        </form>
+
+                        <!-- <a class="btn btn-default pull-right" onclick="showStep('step-overview-empty-creator')" role="button">Save</a> -->
+                        <a class="btn btn-default pull-right" onclick="showStep('step-create-event')" role="button">Save</a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-overview-empty-creator">
+                        <h1>Overview</h1>
+                        <p class="lead">
+                            All events your are hosting and attending
+                        </p>
+
+                        <p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    No Events Scheduled
+                                </li>
+                            </ul>
+                        </p>
+
+                        <a class="btn btn-default center-block" onclick="showStep('step-create-event')" role="button">
+                            <i class="fa fa-calendar"></i> Create new Event
+                        </a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-create-event">
+                        <h1>Create Event</h1>
+
+                        <form>
+                            <input type="text" class="form-control" placeholder="Event Name">
+                            <p>
+                                <div class="input-group date" id="dpStart" data-date-format="yyyy-mm-dd" data-date="2015-04-19">
+                                    <span class="input-group-addon add-on">
+                                        <i class="fa fa-calendar"></i> Beginn
+                                    </span>
+                                    <input class="form-control add-on" type="text" placeholder="Start Day" readonly>
+                                </div>
+                                <div class="input-group date" id="dpEnd" data-date-format="yyyy-mm-dd" data-date="2015-04-19">
+                                    <span class="input-group-addon add-on">
+                                        <i class="fa fa-calendar"></i> End
+                                    </span>
+                                    <input class="form-control add-on" type="text" placeholder="End Day" readonly>
+                                </div>
+                            </p>
+                            <p>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i> Duration
+                                    </span>
+                                    <select class="form-control">
+                                        <option>0:15</option>
+                                        <option>0:30</option>
+                                        <option>0:45</option>
+                                        <option>1:00</option>
+                                        <option>1:30</option>
+                                        <option>2:00</option>
+                                        <option>2:30</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i> Time
+                                    </span>
+                                    <select class="form-control">
+                                        <option>Anytime</option>
+                                        <option>Morning</option>
+                                        <option>Noon</option>
+                                        <option>Afternoon</option>
+                                        <option>Evening</option>
+                                    </select>
+                                </div>
+                            </p>
+
+                            <!-- <p>
+                                Click create and start inviting people
+                            </p> -->
+                        </form>
+
+                        <button type="submit" onclick="showStep('step-share-page-creator')" class="btn btn-primary pull-right">Create Event</button>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-share-page-creator">
+                        <h1>Dinner with Friends</h1>
+                        <p class="lead">
+                            This is a <a>SmartScheduler</a> event invitation.
+                            <strong>Share this page with everyone you want to invite to the event</strong>
+                        </p>
+
+                        <p>
+                            <strong>Creator</strong> You<br>
+                            <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
+                            <strong>Duration</strong> 2:00<br>
+                            <strong>Time Range</strong> Evening<br>
+                        </p>
+
+                        <hr>
+                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-login-visitor">
+                        <h1>Dinner with Friends</h1>
+                        <p class="lead">
+                            This is a <a>SmartScheduler</a> event invitation.
+                        </p>
+
+                        <p>
+                            <strong>Creator</strong> event-creator@gmail.com<br>
+                            <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
+                            <strong>Duration</strong> 2:00<br>
+                            <strong>Time Range</strong> Evening<br>
+                        </p>
+
+                        <a class="btn btn-default center-block" onclick="showStep('step-calendar-access-visitor')" role="button">
+                            <i class="fa fa-google-plus"></i> Login with Google to join
+                        </a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-calendar-access-visitor">
+                        <h1>Calendar Access</h1>
+                        <p class="lead">
+                            SmartScheduler needs access to your calendar
+                        </p>
+
+                        <p>
+                            <ul>
+                                <li>See and modify your Calendar</li>
+                                <li>See your Google-Username</li>
+                                <li>See your Google-Email-Address</li>
+                            </ul>
+                        </p>
+
+                        <center>
+                            <a class="btn btn-danger" onclick="showStep('step-login-visitor')" role="button">Abort</a>
+                            <a class="btn btn-success" onclick="showStep('step-calendar-setup-visitor')" role="button">Give Access</a>
+                        </center>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-calendar-setup-visitor">
+                        <h1>Calendar Setup</h1>
+                        <p class="lead">
+                            Select the calendars to include and give us an Email where to
+                            reach you. You only have to do this once
+                        </p>
+
+                        <form>
+                            <input type="email" class="form-control" id="exampleInputEmail1" value="visitor@gmail.com">
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Home
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> University
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Donkey Club Team
+                                </label>
+                            </div>
+                        </form>
+
+                        <a class="btn btn-default pull-right" onclick="showStep('step-see-dates-visitor')" role="button">Save</a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-see-dates-visitor">
+                        <h1>Dinner with Friends</h1>
+
+                        <p class="lead">
+                            Thanks <strong>Jess</strong> for attending!
+                            Below you find the available dates. For convenience
+                            we show you the calendar entries before and after each
+                            time window
+                        </p>
+
+                        <h2>Available Dates</h2>
+                        <h3>Tomorrow 18:30 - 23:00</h3>
+                        <div class="well well-sm">
+                            You have no appointment before this!
+                        </div>
+                        <!-- <div class="panel panel-warning"> -->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <!-- <p>
+                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
+                                    The time slot overlapses with <a>Road Runner Bash</a>
+                                    (19:00 - 20:00)
+                                </p> -->
+
+                                <strong>Timeslot</strong> 18:30 - 23:00
+                            </div>
+                            <!-- <div class="panel-footer" style="text-align: right;">
+                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                            </div> -->
+                        </div>
+                        <div class="well well-sm">
+                            You have no appointment after this!
+                        </div>
+
+                        <h3>Thursday 19:30 - 23:00</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Free Willy</div>
+                            <div class="panel-body">
+                                <strong>Calendar</strong> Home<br>
+                                <strong>Time</strong> 17:00 - 18:00
+                            </div>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <strong>Timeslot</strong> 19:30 - 23:00
+                            </div>
+                            <!-- <div class="panel-footer" style="text-align: right;">
+                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                            </div> -->
+                        </div>
+                        <div class="well well-sm">
+                            You have no appointment after this!
+                        </div>
+
+                        <h2>People</h2>
+                        <ul>
+                            <li>Jess</li>
+                            <li>Nick</li>
+                            <li>Barney</li>
+                            <li>Schmitt</li>
+                            <li>Winston</li>
+                        </ul>
+
+                        <hr>
+                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-update-notification">
+                        <h1>
+                            SmartScheduler Update <br>
+                            <small>Dinner with Friends</small>
+                        </h1>
+                        <p class="lead">
+                            <strong>Jess</strong> has responded to your event.
+                            Below you find the available dates. For convenience
+                            we show you the calendar entries before and after each
+                            time window
+                        </p>
+
+                        <h2>Available Dates</h2>
+                        <h3>Tomorrow 18:30 - 23:00</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Coffee with ACME</div>
+                            <div class="panel-body">
+                                <strong>Calendar</strong> Work<br>
+                                <strong>Time</strong> 16:00 - 16:45
+                            </div>
+                        </div>
+                        <!-- <div class="panel panel-warning"> -->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <!-- <p>
+                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
+                                    The time slot overlapses with <a>Road Runner Bash</a>
+                                    (19:00 - 20:00)
+                                </p> -->
+
+                                <strong>Timeslot</strong> 18:30 - 23:00
+                            </div>
+                            <!-- <div class="panel-footer" style="text-align: right;">
+                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                            </div> -->
+                        </div>
+                        <div class="well well-sm">
+                            You have no appointment after this!
+                        </div>
+
+                        <h3>Thursday 19:30 - 23:00</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Feed Lama</div>
+                            <div class="panel-body">
+                                <strong>Calendar</strong> Home<br>
+                                <strong>Time</strong> 18:00 - 18:30
+                            </div>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <strong>Timeslot</strong> 19:30 - 23:00
+                            </div>
+                            <!-- <div class="panel-footer" style="text-align: right;">
+                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                            </div> -->
+                        </div>
+                        <div class="well well-sm">
+                            You have no appointment after this!
+                        </div>
+
+                        <h2>People</h2>
+                        <ul>
+                            <li>Jess</li>
+                            <li>Nick</li>
+                            <li>Barney</li>
+                            <li>Schmitt</li>
+                            <li>Winston</li>
+                        </ul>
+
+                        <!-- <p>
+                            For more Info <a href="#" onclick="showStep('step-login-confirm-creator')" role="link">Login to SmartScheduler</a>
+                        </p> -->
+
+                        <hr>
+                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-login-confirm-creator">
+                        <h1>SmartScheduler</h1>
+                        <p class="lead">
+                            <!-- TODO: Update text -->
+                            Login crap and such
+                        </p>
+
+                        <a class="btn btn-default center-block" onclick="showStep('step-overview-creator')" role="button">
+                            <i class="fa fa-google-plus"></i> Login with Google
+                        </a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-overview-creator">
+                        <h1>Overview</h1>
+                        <p class="lead">
+                            All events your are hosting and attending
+                        </p>
+
+                        <p>
+                            <div class="list-group">
+                                <a onclick="showStep('step-detail-event-dates')" class="list-group-item" role="button">
+                                    <h4 class="list-group-item-heading">Dinner with Friends <span class="badge pull-right">5 People</span></h4>
+                                    <p class="list-group-item-text">
+                                        <strong>Creator</strong> You<br>
+                                        <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
+                                        <strong>Duration</strong> 2:00<br>
+                                        <strong>Time Range</strong> Evening<br>
+                                    </p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <h4 class="list-group-item-heading">Road Runner Bash <span class="badge pull-right">1 Person</span></h4>
+                                    <p class="list-group-item-text">
+                                        <strong>Creator</strong> Wile E. Coyote<br>
+                                        <strong>Date</strong> 2015-04-19 - 2015-06-01<br>
+                                        <strong>Duration</strong> 1:00<br>
+                                        <strong>Time Range</strong> Anytime
+                                    </p>
+                                </a>
+                            </div>
+                        </p>
+
+                        <a class="btn btn-default center-block" href="#" role="button">
+                            <i class="fa fa-calendar"></i> Create new Event
+                        </a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-detail-event-dates">
+                        <h1>Dinner with Friends</h1>
+
+                        <h4>Available Dates</h4>
+                        <div class="list-group">
+                            <a class="list-group-item" role="button" onclick="showStep('step-detail-event-dates-conflict')">
+                                <strong>Tomorrow</strong> 18:30 - 23:00
+                                <span class="badge pull-right" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
+                            </a>
+                            <a class="list-group-item" role="button" onclick="showStep('step-detail-event-dates-good')">
+                                <strong>Thursday</strong> 19:30 - 23:00
+                            </a>
+                            <a class="list-group-item" role="button"><strong>Friday</strong> 19:00 - 22:00</a>
+                            <a class="list-group-item" style="height: 1.5em; padding:0.1em;" role="button"><center><i class="fa fa-angle-double-down"></i></center></a>
+                        </div>
+
+                        <h4>People</h4>
+                        <ul>
+                            <li>Jess</li>
+                            <li>Nick</li>
+                            <li>Barney</li>
+                            <li>Schmitt</li>
+                            <li>Winston</li>
+                        </ul>
+
+                        <a class="btn btn-default" onclick="showStep('step-overview-creator')" role="button">Back</a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-detail-event-dates-conflict">
+                        <h1>Dinner with Friends</h1>
+
+                        <p class="lead">
+                            <strong>Tomorrow</strong> 18:30 - 23:00
+                        </p>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Coffee with ACME</div>
+                            <div class="panel-body">
+                                <strong>Calendar</strong> Work<br>
+                                <strong>Time</strong> 16:00 - 16:45
+                            </div>
+                        </div>
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <p>
+                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
+                                    The time slot overlapses with <a>Road Runner Bash</a>
+                                    (19:00 - 20:00)
+                                </p>
+
+                                <strong>Timeslot</strong> 18:30 - 23:00
+                            </div>
+                        </div>
+                        <p>
+                            You have no appointment after this!
+                        </p>
+
+                        <a class="btn btn-default" onclick="showStep('step-detail-event-dates')" role="button">Back</a>
+                        <a class="btn btn-primary pull-right" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-detail-event-dates-good">
+                        <h1>Dinner with Friends</h1>
+
+                        <p class="lead">
+                            <strong>Thursday</strong> 19:30 - 23:00
+                        </p>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Feed Lama</div>
+                            <div class="panel-body">
+                                <strong>Calendar</strong> Home<br>
+                                <strong>Time</strong> 18:00 - 18:30
+                            </div>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Dinner with Friends</div>
+                            <div class="panel-body">
+                                <strong>Timeslot</strong> 19:30 - 23:00
+                            </div>
+                        </div>
+                        <p>
+                            You have no appointment after this!
+                        </p>
+
+                        <a class="btn btn-default" onclick="showStep('step-detail-event-dates')" role="button">Back</a>
+                        <a class="btn btn-primary pull-right" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
+                    </div>
+
+                    <hr class="debug"> <!-- *************************************************************** -->
+
+                    <div class="container-fluid hidden step step-detail-event-saved">
+                        <h1>Dinner with Friends</h1>
+
+                        <p class="lead">
+                            Scheduled for <strong>Thursday 19:30 - 23:00</strong>
+                        </p>
+
+                        <p>
+                            Text about the event being scheduled and everyone gets the
+                            calendar event.
+                        </p>
+
+                        <hr>
+                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-2 col-md-4">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
