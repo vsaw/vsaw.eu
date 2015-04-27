@@ -60,8 +60,35 @@
                     }).data('datepicker');
             }
 
+            var getStepFromUrl = function(url) {
+                var pos = url.lastIndexOf("#");
+                if(pos >= 0) {
+                    return url.slice(pos + 1);
+                } else {
+                    return null;
+                }
+            }
+
+            var jumpToStepFromUrl = function() {
+                var step = getStepFromUrl(window.location.href);
+                if(null != step) {
+                    showStep(step);
+                } else {
+                    showStep("step-welcome-demo");
+                }
+            }
+
             $(document).ready(function() {
                 initDatePicker();
+
+                if ("onhashchange" in window) { // event supported?
+                    window.onhashchange = function () {
+                        // hashChanged(window.location.hash);
+                        jumpToStepFromUrl();
+                    }
+                }
+
+                jumpToStepFromUrl();
             });
         </script>
         <style>
@@ -87,6 +114,10 @@
             .form-control[readonly] {
                 background-color: white;
             }
+
+            .table-condensed td {
+                border-top-width: 0em !important;
+            }
         </style>
     </head>
     <body>
@@ -104,21 +135,21 @@
 
                         <p>
                             <div class="list-group">
-                                <a onclick="showStep('step-login-creator')" class="list-group-item" role="button">
+                                <a href="#step-login-creator" class="list-group-item" role="button">
                                     <h4 class="list-group-item-heading">Part 1: Create an Event</h4>
                                     <p class="list-group-item-text">
                                         Jump in the role of creating an Event for the first
                                         time using SmartScheduler
                                     </p>
                                 </a>
-                                <a onclick="showStep('step-login-visitor')" class="list-group-item" role="button">
+                                <a href="#step-login-visitor" class="list-group-item" role="button">
                                     <h4 class="list-group-item-heading">Part 2: Join an Event</h4>
                                     <p class="list-group-item-text">
                                         What happens when you received a link to join an
                                         Event
                                     </p>
                                 </a>
-                                <a onclick="showStep('step-update-notification')" class="list-group-item" role="button">
+                                <a href="#step-update-notification" class="list-group-item" role="button">
                                     <h4 class="list-group-item-heading">Part 3: Receive Updates</h4>
                                     <p class="list-group-item-text">
                                         When a friend clicks your link at a later point in time SmartScheduler will
@@ -154,7 +185,7 @@
                             And find available dates with a click!
                         </p>
 
-                        <a class="btn btn-default center-block" onclick="showStep('step-calendar-access-creator')" role="button">
+                        <a class="btn btn-default center-block" href="#step-calendar-access-creator" role="button">
                             <i class="fa fa-google-plus"></i> Login with Google
                         </a>
                     </div>
@@ -176,8 +207,8 @@
                         </p>
 
                         <center>
-                            <a class="btn btn-danger" onclick="showStep('step-login-creator')" role="button">Abort</a>
-                            <a class="btn btn-success" onclick="showStep('step-calendar-setup-creator')" role="button">Give Access</a>
+                            <a class="btn btn-danger" href="#step-login-creator" role="button">Abort</a>
+                            <a class="btn btn-success" href="#step-calendar-setup-creator" role="button">Give Access</a>
                         </center>
                     </div>
 
@@ -210,8 +241,7 @@
                             </div>
                         </form>
 
-                        <!-- <a class="btn btn-default pull-right" onclick="showStep('step-overview-empty-creator')" role="button">Save</a> -->
-                        <a class="btn btn-default pull-right" onclick="showStep('step-create-event')" role="button">Save</a>
+                        <a class="btn btn-default pull-right" href="#step-create-event" role="button">Save</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
@@ -230,7 +260,7 @@
                             </ul>
                         </p>
 
-                        <a class="btn btn-default center-block" onclick="showStep('step-create-event')" role="button">
+                        <a class="btn btn-default center-block" href="#step-create-event" role="button">
                             <i class="fa fa-calendar"></i> Create new Event
                         </a>
                     </div>
@@ -290,7 +320,7 @@
                             </p> -->
                         </form>
 
-                        <button type="submit" onclick="showStep('step-share-page-creator')" class="btn btn-primary pull-right">Create Event</button>
+                        <a href="#step-share-page-creator" class="btn btn-primary pull-right">Create Event</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
@@ -310,7 +340,7 @@
                         </p>
 
                         <hr>
-                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                        <a href="#step-welcome-demo" class="btn btn-primary center-block">Back to Demo Start</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
@@ -328,7 +358,7 @@
                             <strong>Time Range</strong> Evening<br>
                         </p>
 
-                        <a class="btn btn-default center-block" onclick="showStep('step-calendar-access-visitor')" role="button">
+                        <a class="btn btn-default center-block" href="#step-calendar-access-visitor" role="button">
                             <i class="fa fa-google-plus"></i> Login with Google to join
                         </a>
                     </div>
@@ -350,8 +380,8 @@
                         </p>
 
                         <center>
-                            <a class="btn btn-danger" onclick="showStep('step-login-visitor')" role="button">Abort</a>
-                            <a class="btn btn-success" onclick="showStep('step-calendar-setup-visitor')" role="button">Give Access</a>
+                            <a class="btn btn-danger" href="#step-login-visitor" role="button">Abort</a>
+                            <a class="btn btn-success" href="#step-calendar-setup-visitor" role="button">Give Access</a>
                         </center>
                     </div>
 
@@ -384,7 +414,7 @@
                             </div>
                         </form>
 
-                        <a class="btn btn-default pull-right" onclick="showStep('step-see-dates-visitor')" role="button">Save</a>
+                        <a class="btn btn-default pull-right" href="#step-see-dates-visitor" role="button">Save</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
@@ -401,49 +431,37 @@
 
                         <h2>Available Dates</h2>
                         <h3>Tomorrow 18:30 - 23:00</h3>
-                        <div class="well well-sm">
-                            You have no appointment before this!
-                        </div>
-                        <!-- <div class="panel panel-warning"> -->
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <!-- <p>
-                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
-                                    The time slot overlapses with <a>Road Runner Bash</a>
-                                    (19:00 - 20:00)
-                                </p> -->
-
-                                <strong>Timeslot</strong> 18:30 - 23:00
-                            </div>
-                            <!-- <div class="panel-footer" style="text-align: right;">
-                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                            </div> -->
-                        </div>
-                        <div class="well well-sm">
-                            You have no appointment after this!
-                        </div>
+                        <table class="table table-condensed">
+                            <tr><td></td><td>You have no appointment before this!</td></tr>
+                            <tr class="success">
+                                <td>18:30</td>
+                                <td>
+                                    <strong>Dinner with Friends</strong><br>
+                                    End: 23:00 (4h 30min)
+                                </td>
+                            </tr>
+                            <tr><td></td><td>You have no appointment after this!</td></tr>
+                        </table>
 
                         <h3>Thursday 19:30 - 23:00</h3>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Free Willy</div>
-                            <div class="panel-body">
-                                <strong>Calendar</strong> Home<br>
-                                <strong>Time</strong> 17:00 - 18:00
-                            </div>
-                        </div>
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <strong>Timeslot</strong> 19:30 - 23:00
-                            </div>
-                            <!-- <div class="panel-footer" style="text-align: right;">
-                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                            </div> -->
-                        </div>
-                        <div class="well well-sm">
-                            You have no appointment after this!
-                        </div>
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>17:00</td>
+                                <td>
+                                    <strong>Free Willy</strong><br>
+                                    Calendar: Home<br>
+                                    End: 18:00 (1h)
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>19:30</td>
+                                <td>
+                                    <strong>Dinner with Friends</strong><br>
+                                    End: 23:00 (3h 30min)
+                                </td>
+                            </tr>
+                            <tr><td></td><td>You have no appointment after this!</td></tr>
+                        </table>
 
                         <h2>People</h2>
                         <ul>
@@ -455,12 +473,17 @@
                         </ul>
 
                         <hr>
-                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                        <a href="#step-welcome-demo" class="btn btn-primary center-block">Back to Demo Start</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
                     <div class="container-fluid hidden step step-update-notification">
+                        <div>&nbsp;</div>
+                        <strong>From:</strong> updates@smart-scheduler.io <br>
+                        <strong>To:</strong> Me
+                        <span class="pull-right">5 Minutes Ago</span>
+                        <hr>
                         <h1>
                             SmartScheduler Update <br>
                             <small>Dinner with Friends</small>
@@ -474,53 +497,44 @@
 
                         <h2>Available Dates</h2>
                         <h3>Tomorrow 18:30 - 23:00</h3>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Coffee with ACME</div>
-                            <div class="panel-body">
-                                <strong>Calendar</strong> Work<br>
-                                <strong>Time</strong> 16:00 - 16:45
-                            </div>
-                        </div>
-                        <!-- <div class="panel panel-warning"> -->
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <!-- <p>
-                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
-                                    The time slot overlapses with <a>Road Runner Bash</a>
-                                    (19:00 - 20:00)
-                                </p> -->
-
-                                <strong>Timeslot</strong> 18:30 - 23:00
-                            </div>
-                            <!-- <div class="panel-footer" style="text-align: right;">
-                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                            </div> -->
-                        </div>
-                        <div class="well well-sm">
-                            You have no appointment after this!
-                        </div>
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>16:00</td>
+                                <td>
+                                    <strong>Coffee with ACME</strong><br>
+                                    End: 16:45 (45min)<br>
+                                    Calendar: Work
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>18:30</td>
+                                <td>
+                                    <strong>Dinner with Friends</strong><br>
+                                    End: 23:00 (4h 30min)
+                                </td>
+                            </tr>
+                            <tr><td></td><td>You have no appointment after this!</td></tr>
+                        </table>
 
                         <h3>Thursday 19:30 - 23:00</h3>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Feed Lama</div>
-                            <div class="panel-body">
-                                <strong>Calendar</strong> Home<br>
-                                <strong>Time</strong> 18:00 - 18:30
-                            </div>
-                        </div>
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <strong>Timeslot</strong> 19:30 - 23:00
-                            </div>
-                            <!-- <div class="panel-footer" style="text-align: right;">
-                                <a class="btn btn-primary" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                            </div> -->
-                        </div>
-                        <div class="well well-sm">
-                            You have no appointment after this!
-                        </div>
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>18:00</td>
+                                <td>
+                                    <strong>Feed Lama</strong><br>
+                                    End: 18:30 (30min)<br>
+                                    Calendar: Home
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>19:30</td>
+                                <td>
+                                    <strong>Dinner with Friends</strong><br>
+                                    End: 23:00 (3h 30min)
+                                </td>
+                            </tr>
+                            <tr><td></td><td>You have no appointment after this!</td></tr>
+                        </table>
 
                         <h2>People</h2>
                         <ul>
@@ -530,13 +544,8 @@
                             <li>Schmitt</li>
                             <li>Winston</li>
                         </ul>
-
-                        <!-- <p>
-                            For more Info <a href="#" onclick="showStep('step-login-confirm-creator')" role="link">Login to SmartScheduler</a>
-                        </p> -->
-
                         <hr>
-                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                        <a href="#step-welcome-demo" class="btn btn-primary center-block">Back to Demo Start</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
