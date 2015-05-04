@@ -83,7 +83,6 @@
 
                 if ("onhashchange" in window) { // event supported?
                     window.onhashchange = function () {
-                        // hashChanged(window.location.hash);
                         jumpToStepFromUrl();
                     }
                 }
@@ -169,7 +168,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-login-creator">
+                    <div class="container-fluid step step-login-creator">
                         <h1>SmartScheduler</h1>
                         <p class="lead">
                             Quit the endless scheduling <em>ping-pong</em>
@@ -192,7 +191,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-calendar-access-creator">
+                    <div class="container-fluid step step-calendar-access-creator">
                         <h1>Calendar Access</h1>
                         <p class="lead">
                             SmartScheduler needs access to your calendar
@@ -214,7 +213,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-calendar-setup-creator">
+                    <div class="container-fluid step step-calendar-setup-creator">
                         <h1>Calendar Setup</h1>
                         <p class="lead">
                             Select the calendars to include and give us an Email where to
@@ -246,7 +245,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-overview-empty-creator">
+                    <div class="container-fluid step step-overview-empty-creator">
                         <h1>Overview</h1>
                         <p class="lead">
                             All events your are hosting and attending
@@ -267,11 +266,12 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-create-event">
+                    <div class="container-fluid step step-create-event">
                         <h1>Create Event</h1>
 
                         <form>
                             <input type="text" class="form-control" placeholder="Event Name">
+                            <input type="text" class="form-control" placeholder="Place (Optional)">
                             <p>
                                 <div class="input-group date" id="dpStart" data-date-format="yyyy-mm-dd" data-date="2015-04-19">
                                     <span class="input-group-addon add-on">
@@ -320,16 +320,17 @@
                             </p> -->
                         </form>
 
-                        <a href="#step-share-page-creator" class="btn btn-primary pull-right">Create Event</a>
+                        <a href="#step-share-page-creator" class="btn btn-primary pull-right">Start Scheduling</a>
                     </div>
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-share-page-creator">
+                    <div class="container-fluid step step-share-page-creator">
                         <h1>Dinner with Friends</h1>
                         <p class="lead">
                             This is a <a>SmartScheduler</a> event invitation.
                             <strong>Share this page with everyone you want to invite to the event</strong>
+                            <input type="text" class="form-control" value="https://someshare/url?hashvalue">
                         </p>
 
                         <p>
@@ -337,6 +338,7 @@
                             <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
                             <strong>Duration</strong> 2:00<br>
                             <strong>Time Range</strong> Evening<br>
+                            <strong>Place</strong> Seehaus am Englischen Garten
                         </p>
 
                         <hr>
@@ -345,7 +347,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-login-visitor">
+                    <div class="container-fluid step step-login-visitor">
                         <h1>Dinner with Friends</h1>
                         <p class="lead">
                             This is a <a>SmartScheduler</a> event invitation.
@@ -356,6 +358,7 @@
                             <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
                             <strong>Duration</strong> 2:00<br>
                             <strong>Time Range</strong> Evening<br>
+                            <strong>Place</strong> Seehaus am Englischen Garten
                         </p>
 
                         <a class="btn btn-default center-block" href="#step-calendar-access-visitor" role="button">
@@ -365,7 +368,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-calendar-access-visitor">
+                    <div class="container-fluid step step-calendar-access-visitor">
                         <h1>Calendar Access</h1>
                         <p class="lead">
                             SmartScheduler needs access to your calendar
@@ -387,7 +390,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-calendar-setup-visitor">
+                    <div class="container-fluid step step-calendar-setup-visitor">
                         <h1>Calendar Setup</h1>
                         <p class="lead">
                             Select the calendars to include and give us an Email where to
@@ -419,7 +422,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-see-dates-visitor">
+                    <div class="container-fluid step step-see-dates-visitor">
                         <h1>Dinner with Friends</h1>
 
                         <p class="lead">
@@ -431,8 +434,10 @@
 
                         <h2>Available Dates</h2>
                         <h3>Tomorrow 18:30 - 23:00</h3>
+                        <strong>All Day</strong> Dad Birthday
                         <table class="table table-condensed">
-                            <tr><td></td><td>You have no appointment before this!</td></tr>
+                            <tr><td width="3em">All Day</td><td><strong>Oma Geburtstag</strong></td></tr>
+                            <!-- <tr><td></td><td>You have no appointment before this!</td></tr> -->
                             <tr class="success">
                                 <td>18:30</td>
                                 <td>
@@ -478,7 +483,7 @@
 
                     <hr class="debug"> <!-- *************************************************************** -->
 
-                    <div class="container-fluid hidden step step-update-notification">
+                    <div class="container-fluid step step-update-notification">
                         <div>&nbsp;</div>
                         <strong>From:</strong> updates@smart-scheduler.io <br>
                         <strong>To:</strong> Me
@@ -493,6 +498,14 @@
                             Below you find the available dates. For convenience
                             we show you the calendar entries before and after each
                             time window
+                        </p>
+
+                        <p>
+                            <strong>Creator</strong> event-creator@gmail.com<br>
+                            <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
+                            <strong>Duration</strong> 2:00<br>
+                            <strong>Time Range</strong> Evening<br>
+                            <strong>Place</strong> Seehaus am Englischen Garten
                         </p>
 
                         <h2>Available Dates</h2>
@@ -544,172 +557,16 @@
                             <li>Schmitt</li>
                             <li>Winston</li>
                         </ul>
-                        <hr>
-                        <a href="#step-welcome-demo" class="btn btn-primary center-block">Back to Demo Start</a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-login-confirm-creator">
-                        <h1>SmartScheduler</h1>
-                        <p class="lead">
-                            <!-- TODO: Update text -->
-                            Login crap and such
-                        </p>
-
-                        <a class="btn btn-default center-block" onclick="showStep('step-overview-creator')" role="button">
-                            <i class="fa fa-google-plus"></i> Login with Google
-                        </a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-overview-creator">
-                        <h1>Overview</h1>
-                        <p class="lead">
-                            All events your are hosting and attending
-                        </p>
 
                         <p>
-                            <div class="list-group">
-                                <a onclick="showStep('step-detail-event-dates')" class="list-group-item" role="button">
-                                    <h4 class="list-group-item-heading">Dinner with Friends <span class="badge pull-right">5 People</span></h4>
-                                    <p class="list-group-item-text">
-                                        <strong>Creator</strong> You<br>
-                                        <strong>Date</strong> 2015-04-19 - 2015-05-01<br>
-                                        <strong>Duration</strong> 2:00<br>
-                                        <strong>Time Range</strong> Evening<br>
-                                    </p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">Road Runner Bash <span class="badge pull-right">1 Person</span></h4>
-                                    <p class="list-group-item-text">
-                                        <strong>Creator</strong> Wile E. Coyote<br>
-                                        <strong>Date</strong> 2015-04-19 - 2015-06-01<br>
-                                        <strong>Duration</strong> 1:00<br>
-                                        <strong>Time Range</strong> Anytime
-                                    </p>
-                                </a>
-                            </div>
-                        </p>
-
-                        <a class="btn btn-default center-block" href="#" role="button">
-                            <i class="fa fa-calendar"></i> Create new Event
-                        </a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-detail-event-dates">
-                        <h1>Dinner with Friends</h1>
-
-                        <h4>Available Dates</h4>
-                        <div class="list-group">
-                            <a class="list-group-item" role="button" onclick="showStep('step-detail-event-dates-conflict')">
-                                <strong>Tomorrow</strong> 18:30 - 23:00
-                                <span class="badge pull-right" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
-                            </a>
-                            <a class="list-group-item" role="button" onclick="showStep('step-detail-event-dates-good')">
-                                <strong>Thursday</strong> 19:30 - 23:00
-                            </a>
-                            <a class="list-group-item" role="button"><strong>Friday</strong> 19:00 - 22:00</a>
-                            <a class="list-group-item" style="height: 1.5em; padding:0.1em;" role="button"><center><i class="fa fa-angle-double-down"></i></center></a>
-                        </div>
-
-                        <h4>People</h4>
-                        <ul>
-                            <li>Jess</li>
-                            <li>Nick</li>
-                            <li>Barney</li>
-                            <li>Schmitt</li>
-                            <li>Winston</li>
-                        </ul>
-
-                        <a class="btn btn-default" onclick="showStep('step-overview-creator')" role="button">Back</a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-detail-event-dates-conflict">
-                        <h1>Dinner with Friends</h1>
-
-                        <p class="lead">
-                            <strong>Tomorrow</strong> 18:30 - 23:00
-                        </p>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Coffee with ACME</div>
-                            <div class="panel-body">
-                                <strong>Calendar</strong> Work<br>
-                                <strong>Time</strong> 16:00 - 16:45
-                            </div>
-                        </div>
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <p>
-                                    <span class="badge" style="background-color: orange;"><i class="fa fa-exclamation-triangle"></i></span>
-                                    The time slot overlapses with <a>Road Runner Bash</a>
-                                    (19:00 - 20:00)
-                                </p>
-
-                                <strong>Timeslot</strong> 18:30 - 23:00
-                            </div>
-                        </div>
-                        <p>
-                            You have no appointment after this!
-                        </p>
-
-                        <a class="btn btn-default" onclick="showStep('step-detail-event-dates')" role="button">Back</a>
-                        <a class="btn btn-primary pull-right" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-detail-event-dates-good">
-                        <h1>Dinner with Friends</h1>
-
-                        <p class="lead">
-                            <strong>Thursday</strong> 19:30 - 23:00
-                        </p>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Feed Lama</div>
-                            <div class="panel-body">
-                                <strong>Calendar</strong> Home<br>
-                                <strong>Time</strong> 18:00 - 18:30
-                            </div>
-                        </div>
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Dinner with Friends</div>
-                            <div class="panel-body">
-                                <strong>Timeslot</strong> 19:30 - 23:00
-                            </div>
-                        </div>
-                        <p>
-                            You have no appointment after this!
-                        </p>
-
-                        <a class="btn btn-default" onclick="showStep('step-detail-event-dates')" role="button">Back</a>
-                        <a class="btn btn-primary pull-right" role="button" onclick="showStep('step-detail-event-saved')">Put in Calendar</a>
-                    </div>
-
-                    <hr class="debug"> <!-- *************************************************************** -->
-
-                    <div class="container-fluid hidden step step-detail-event-saved">
-                        <h1>Dinner with Friends</h1>
-
-                        <p class="lead">
-                            Scheduled for <strong>Thursday 19:30 - 23:00</strong>
-                        </p>
-
-                        <p>
-                            Text about the event being scheduled and everyone gets the
-                            calendar event.
+                            Click <a href="">leave Event</a> to be completely
+                            removed from the event. You will not get uptades on
+                            the event anymore and your availability will not be
+                            considered anymore.
                         </p>
 
                         <hr>
-                        <button type="submit" onclick="showStep('step-welcome-demo')" class="btn btn-primary center-block">Back to Demo Start</button>
+                        <a href="#step-welcome-demo" class="btn btn-primary center-block">Back to Demo Start</a>
                     </div>
                 </div>
                 <div class="hidden-xs col-sm-2 col-md-4">
