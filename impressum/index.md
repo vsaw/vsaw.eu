@@ -10,7 +10,7 @@ Oberländerstr 3b<br />
 81371 München
 
 Telefon: +49 162 4601634<br />
-E-Mail: valentin@sawadski.eu<br />
+E-Mail: valentin {at} sawadski {punkt} eu<br />
 PGP Fingerprint: [7ACA 2C01 7BB1 97C0 6C77  F77D FA20 0470 B801 7CCC](https://pgp.mit.edu/pks/lookup?op=get&search=0xFA200470B8017CCC)
 
 # Haftungsausschluss (Disclaimer)

@@ -33,6 +33,7 @@ title: Blog
                 {% else %}
                     {{ post.excerpt }}
                 {% endif %}
+                <a href="{{ site.BASE_PATH }}{{ post.url }}">Read full post...</a>
             {% endif %}
         </div>
     </article>
