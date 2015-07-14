@@ -31,6 +31,7 @@ categories_path: blog/categories.html
 tags_path: blog/tags.html
 about_path: about/
 projects_path: projects/
+impressum_path: impressum/
 paginate: 10
 paginate_path: "blog/page:num"
 
