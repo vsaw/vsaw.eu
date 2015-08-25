@@ -14,3 +14,19 @@ rmmod ftdi_sio
 # Load with your additional custom device
 modprobe ftdi_sio vendor=0x123 product=0xABC
 ```
+
+## Update
+Newer versions of Linux don't accept the parameters anymore, so if `dmesg` shows the following messages
+
+```bash
+# dmesg | grep ftdi
+ftdi_sio: unknown parameter 'vendor' ignored
+ftdi_sio: unknown parameter 'product' ignored
+```
+
+try the following
+
+```bash
+modprobe ftdi_sio
+echo "123 ABC" > /sys/bus/usb-serial/drivers/ftdi_sio/new_id
+```
