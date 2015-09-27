@@ -36,6 +36,13 @@
 				</a>
 			</li>
 		{% endif %}
+		{% if site.author.keybase %}
+			<li>
+				<a class="btn btn-default btn-sm" href="https://keybase.io/{{ site.author.keybase }}">
+					<i class="fa fa-key fa-lg"></i>
+				</a>
+			</li>
+		{% endif %}
 		{% if site.author.email %}
 			<li>
 				<a class="btn btn-default btn-sm" href="mailto:{{ site.author.email }}">

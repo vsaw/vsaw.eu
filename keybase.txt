@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/vsaw
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://vsaw.eu
+  * I am vsaw (https://keybase.io/vsaw) on keybase.
+  * I have a public key with fingerprint 7ACA 2C01 7BB1 97C0 6C77  F77D FA20 0470 B801 7CCC
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010168a34e3a60e5496a27d834da89ebe92d1495804e020689828086329e8bcfd21e0a",
+            "fingerprint": "7aca2c017bb197c06c77f77dfa200470b8017ccc",
+            "host": "keybase.io",
+            "key_id": "fa200470b8017ccc",
+            "kid": "010168a34e3a60e5496a27d834da89ebe92d1495804e020689828086329e8bcfd21e0a",
+            "uid": "02df07e8adb70a72e70f9aa1b5ab2c19",
+            "username": "vsaw"
+        },
+        "service": {
+            "hostname": "vsaw.eu",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1443370562,
+    "expire_in": 157680000,
+    "prev": "f5b328f26464e810a8fc19eaaa127d600e91e3a29a15726082dd6472113c31a2",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - https://gpgtools.org
+
+owGtUmtMHFUY3UVoLCCUNkVeJWQEQy2PO3dn50GCTUsfkkCbwoZHxSx3Zu6yIzg7
++2AB6bYFU1qINJgQU5oWIiCCptRYFAqWNG2kUVqwJlQR5FGrSFpYJUC0geJM1cQf
+/vT+ubnfd8655zv5Gp57Ruevfxzjq/Tpj93WD8/zupxnQw9VErxNrCBSKoli/PTC
+JSJ2uszFkkikEIAEJM0iA4UNiAbYSHE0gozIGigRsRzmMQdFkuKMLKAwgIBmORay
+gKUNkMMsL1hESGKAiATCIslF2KE4JNmlyjJIQFAAJMPzJMcIgBYYxsIwogVBACgG
+8KzaEwRBJVptTo2hmuOREydJNrWmPsxP7f0H/n/2XfqXHBQtgMEsEnkGIAZiBlg4
+hEjeiHgokJwGdGKHjN7AKtrtRGWEJ4FQK25JwFqo2hT/6ibhUpWiOGwum2ArUYtW
+l0tJ0TiuCkUDlWHe/DfdzEuyqKanEtzY4ZRsMpFCqkjBJWl6JEUZDAww0jCBwOWK
+5MBmSUMYGZoF6tG+wW4tKyNvgKwF0hRNYZYE6BBrUa1jpM6hRkMDgDlSjQtySCVD
+GrBQFGmKgSRpEAwkgoQ2kV22ESmU6hMVqZpOqUhGrlIHJjz+tT5Rvjq9v26Tn4+2
+Vzr/zVv+WbYNS/BjHzl3T0hYwFudLYVfhV2/kfydczGjbGV8YiN5V89gK46rmZsc
+MyxZr4g3B2DLxP6lmUzz/VokrWd5YVm/uO30FdOZHsWhP7CVq4tPimqVr15QLqVN
+/RjVcywSblhHdvY1TjhzGoeSdzvKPnba2K8buoaCe+fePL79iO9R3aaQyRh7c2db
+nnwy8X06sWqquTIgw7vCGUOnPXBx82pGfH/TpHfM2v3irTW3/nVjvVlm3b2rSt10
+aW6PeO1cmjEvLv7zkqAP1tLpre1VV5nQrHNzuwZfsNvf25iE1uiW8Nsz9fO/flMd
+eSf5B/vywnKedezEUbYh1nQ8Yt9ISfZC5GTV6m/5o58WLGV//3BnWuZCUOdBpWUj
+O/jwtanQn6ymDvOXl9Yj28903HrS2p2YG2tam6h+MGPPk/32PNpx/tXTXOVLyG/3
+UlyYt+CPh9aKyLaVE/GPRi92e7PvnPIu1A3fi2VPdqWO5ne9MttWH1NJz9xIpZer
+twzU7F1Mf56hU5RvD5uGo6t8mp9k2muD1mO+CAiPDn/Hs5zV7pkums1lR/pzDgxf
+ID673jzwS2F0we8hgWG944HLCZ2nyi/XjB9R7jZmtr69fbVpsGO/+PJAWmLT3vtZ
+K9v2BfbNQ1t5RMfFgnt3HwzdrJk9a/IcvDzwbsSHTa+lt/6c+klx+Uf55wt3tFWb
+/wQ=
+=3gV+
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/vsaw
+
+==================================================================
