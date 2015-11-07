@@ -1,11 +1,13 @@
 ---
 title: "Brains, muscles, eyes & ears - A simple way to describe and design a real word sensor/actuator system"
 tags: Tech IoT
+excerpt_separator: <!--more-->
 ---
 
 While in the process of brainstorming an improved architecture for "regular" sensor/actuator systems it came to me how hard it actually is to come up with a clean scheme for such things.The design quickly becomes something where Information, roles and states of the Devices/Agents get mixed into a complex mess! Which is not surprising since in the end there are many interconnected agents forming a larger system.
 
 So to simplify the process of designing such a system I propose a "low-tech" modelling scheme which I believe can help setting the right frame to define a common language to describe and express what even the most complex system should or should not do:
+<!--more-->
 
 # Brains, Muscles, Eyes & Ears
 Essentially there are 3 types that each component of the system belongs to. I will quickly explain each role with a typical use case from the home-automation: climate control.

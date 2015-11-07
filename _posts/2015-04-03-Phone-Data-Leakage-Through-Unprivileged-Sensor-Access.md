@@ -1,11 +1,13 @@
 ---
 title: "Phone Data Leakage Through Unprivileged Sensor Access"
 tags: Tech IT-Security
+excerpt_separator: <!--more-->
 ---
 
 Access to physical Sensors like Acceleration and Orientation/Gyroscope is considered unprivileged on Android Phones. Most likely because the data captured by these sensors is considered not harmful or sensitive.
 
 However analysis of sensor data from the device quickly reveals that certain device usage patterns are clearly visible. The most sophisticated attack known to me even shows that a tap-logger can be built which records any user interaction with the screen.
+<!--more-->
 
 # Leaked Data
 First an Overview of the data that I know can be leaked through unprivileged sensors.

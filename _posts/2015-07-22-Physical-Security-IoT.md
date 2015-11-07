@@ -1,12 +1,15 @@
 ---
 title: "Physical Security in the IoT"
 tags: IoT IT-Security Tech
+excerpt_separator: <!--more-->
 ---
 
 <!-- Physical Security way more expensive for very robust widespread implementations to keep 30bn devices safe -->
 Security in the IoT is still a very active topic. Work is being done on all aspects of the IoT, the network, the data but also on the physical level?
 
 *Physical Security* is concerned with protecting the device internal and external hardware. It aims to ensure the integrity of the deployed hardware and prevent unauthorized access to privileged manufacturing and debugging interfaces against attackers with direct physical access to the hardware. So naturally it involves sturdy enclosures, mechanic locks and such, all of which is expensive to manufacture.
+
+<!--more-->
 
 ## How much of the IoT requires physical security?
 <!-- Loads of times not required (home based devices) -->

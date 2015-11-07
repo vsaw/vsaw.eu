@@ -1,6 +1,7 @@
 ---
 title: "Facebook's ambition towards PGP and what could come next..."
 tags: Tech IT-Security Idea
+excerpt_separator: <!--more-->
 ---
 
 On June 1st [Facebook offered to encrypt Emails with PGP](https://www.facebook.com/notes/protecting-the-graph/securing-email-communications-from-facebook/1611941762379302).
@@ -10,6 +11,8 @@ On June 1st [Facebook offered to encrypt Emails with PGP](https://www.facebook.c
 > ...
 >
 > To enhance the privacy of this email content, today we are gradually rolling out an experimental new feature that enables people to add [OpenPGP](http://www.openpgp.org/) [public keys](https://tools.ietf.org/html/rfc4880) to their profile;
+
+<!--more-->
 
 It makes sense in a way as Notifications about Posts in your Groups may contain sensitive information that you don't want your Email provider to know about.
 
