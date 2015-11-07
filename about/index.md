@@ -1,6 +1,7 @@
 ---
 title: About
 layout: page
+tagline: This is about hacking, technological advances and how to seize the opportunity! All from an entrepreneurial angle and based on personal experiences.
 ---
 Let me introduce me to you based on three powerful questions asked by [Simon Sinak](https://www.youtube.com/watch?v=u4ZoJKF_VuA)
 
