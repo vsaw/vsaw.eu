@@ -2,13 +2,12 @@
 title: Ethical Things
 excerpt_separator: <!--more-->
 ---
-<center>
-![Ethical Cars](/assets/posts/2015-11-14-Ethical-Things/Cars.png)
-</center>
 
 MIT Technology Review recently did a very good piece titled "[Why Self-Driving Cars Must Be Programmed to Kill](http://www.technologyreview.com/view/542626/why-self-driving-cars-must-be-programmed-to-kill/)" in which they claim that "*carmakers must solve an impossible ethical dilemma of algorithmic morality*". This sparked off a [Twitter conversation](https://twitter.com/e2b/status/663851807584739332) with [@e2b](https://twitter.com/e2b) where I stated my view that Self-Driving cars and other things will not be considered a set of algorithms but as being which will be subject to ethical considerations.
 
-<!--more-->
+<center>
+![Ethical Cars](/assets/posts/2015-11-14-Ethical-Things/Cars.png)
+</center>
 
 ## From Machine Learning to Autonomous Agents
 I understand that technically speaking the machine still follows a pre-defined program and therefore does not have a "free will" which it would need to do independent decisions. However such machines, once deployed, act autonomously in absence of their creator or operator and react to new situations to the best of their knowledge and capabilities. Therefore I suspect most people will think of them as autonomous agents rather than a set of machine learning algorithms.
