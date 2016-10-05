@@ -3,13 +3,6 @@ title: vagrant-jekyll-gh-pages
 description: Set up Jekyll to locally test GitHub Pages within minutes
 ---
 
-{% for r in site.github.public_repositories %}
-    {% if r.name == page.title %}
-        {% assign repository = r %}
-    {% endif %}
-{% endfor %}
-
-
 This will bootstrap a small ubuntu server running [Jekyll](http://jekyllrb.com/) configured by the [guidelines of GitHub Pages](https://help.github.com/articles/using-jekyll-with-pages/).
 
 The **Requirements** are only [Vagrant](https://www.vagrantup.com/). The rest will be automatically retrieved and installed by the script.
@@ -33,4 +26,4 @@ $ sudo service jekyll (start|stop|restart|status)
 ```
 
 # License
-See [LICENSE]({{ repository.html_url }}/blob/{{ repository.default_branch }}/LICENSE)
+See [LICENSE](https://github.com/vsaw/vagrant-jekyll-gh-pages/blob/master/LICENSE)
